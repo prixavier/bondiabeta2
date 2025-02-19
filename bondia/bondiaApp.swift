@@ -5,13 +5,24 @@
 //  Created by Priscilla Xavier on 2/12/25.
 //
 
+
+
 import SwiftUI
+import FirebaseCore
+
 
 @main
-struct bondiaApp: App {
+
+struct bondia: App {
+    
+    @State private var isAuthenticated = false
+    init() {
+        FirebaseApp.configure() // Ensure Firebase is configured here
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(isAuthenticated: $isAuthenticated)
         }
     }
 }
