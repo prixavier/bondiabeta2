@@ -47,6 +47,15 @@ struct HomeView: View {
                     Image(systemName: "gear")
                         .font(.title)
                 })
+                
+                .navigationBarItems(trailing:
+                    NavigationLink(destination: PostEventView()) {
+                        Image(systemName: "pencil.and.outline")
+                            .font(.title2)
+                            .foregroundColor(.blue)
+                    }
+                )
+
             }
         }
     }
@@ -159,19 +168,21 @@ struct HomeView: View {
                     .foregroundColor(selectedTab == 1 ? .blue : .gray)
             }
             Spacer()
-            NavigationLink(destination: ProfileView()) {
-                Image(systemName: selectedTab == 2 ? "person.circle.fill" : "person.circle")
+            NavigationLink(destination: MyGroupChatView()) {
+                Image(systemName: selectedTab == 2 ? "bubble.left.circle.fill" : "bubble.left.circle")
                     .font(.title)
                     .padding()
                     .foregroundColor(selectedTab == 2 ? .blue : .gray)
+                
             }
             Spacer()
-            NavigationLink(destination: MyGroupChatView()) {
-                Image(systemName: selectedTab == 3 ? "bubble.left.circle.fill" : "bubble.left.circle")
+            NavigationLink(destination: ProfileView()) {
+                Image(systemName: selectedTab == 3 ? "person.circle.fill" : "person.circle")
                     .font(.title)
                     .padding()
                     .foregroundColor(selectedTab == 3 ? .blue : .gray)
             }
+            
         }
         .frame(height: 60)
         .background(Color.white)

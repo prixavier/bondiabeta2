@@ -26,7 +26,7 @@ struct CalendarView: View {
                         .font(.headline)
                         .padding()
                     
-                    TextField("Enter event details", text: $newEventText)
+                    TextField("Enter event name", text: $newEventText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
                     
